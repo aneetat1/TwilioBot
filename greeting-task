@@ -1,0 +1,10 @@
+{
+	"actions": [
+		{
+			"say": "Hi :)... what programming language are you? Answer each question to find out!"
+		},
+		{
+			"redirect": "task://main_questions"
+		}
+	]
+}
