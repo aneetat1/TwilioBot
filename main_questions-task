@@ -1,0 +1,92 @@
+{
+	"actions": [
+		{
+			"collect": {
+				"name": "what_programming_language_are_you",
+				"questions": [
+					{
+						"question": "1. Virtual school starts at 9 AM. What are you doing at 8:58 AM? \n a. Reviewing your notes like the organized person you are \n b. drinking ten cups of coffee because you slept at 1 AM \n c. just waking up (mood)",
+						"name": "q1",
+						"validate": {
+							"allowed_values": {
+								"list": [
+									"a",
+									"b",
+									"c"
+								]
+							},
+							"on_failure": {
+								"messages": [
+									{
+										"say": "Please send a, b, or c, stoopid"
+									}
+								],
+								"repeat_question": true
+							},
+							"max_attempts": {
+								"redirect": "task://greeting",
+								"num_attempts": 3
+							}
+						}
+					},
+					{
+						"question": "2. What name would you give your future child? \n a. Pilot Inspektor \n b. X AE A-12 \n c. Orange",
+						"name": "q2",
+						"validate": {
+							"allowed_values": {
+								"list": [
+									"a",
+									"b",
+									"c"
+								]
+							},
+							"on_failure": {
+								"messages": [
+									{
+										"say": "Please send a, b, or c, stoopid"
+									}
+								],
+								"repeat_question": true
+							},
+							"max_attempts": {
+								"redirect": "task://greeting",
+								"num_attempts": 3
+							}
+						}
+					},
+					{
+						"question": "3. What is the first thing you and your friends will do when quarantine is over? \n a. go shopping \n b. play video games \n c. get food",
+						"name": "q3",
+						"validate": {
+							"allowed_values": {
+								"list": [
+									"a",
+									"b",
+									"c"
+								]
+							},
+							"on_failure": {
+								"messages": [
+									{
+										"say": "Please send a, b, or c, stoopid"
+									}
+								],
+								"repeat_question": true
+							},
+							"max_attempts": {
+								"redirect": "task://greeting",
+								"num_attempts": 3
+							}
+						}
+					}
+				],
+				"on_complete": {
+					"redirect": {
+						"method": "POST",
+						"uri": "https://bazaar-giraffe-9149.twil.io/aneetasbot"
+					}
+				}
+			}
+		}
+	]
+}
